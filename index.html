@@ -5,568 +5,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sukumar Gajulapalli - ICT Systems Analyst</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header Styles */
-        .header {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .header h2 {
-            font-size: 1.5rem;
-            color: #60a5fa;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .header p {
-            font-size: 1.125rem;
-            color: #cbd5e1;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .header-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        @media (min-width: 640px) {
-            .header-buttons {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-        }
-
-        .btn-outline {
-            border: 2px solid #60a5fa;
-            color: #60a5fa;
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 4rem 0;
-        }
-
-        .section-alt {
-            background-color: #f8fafc;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #1e293b;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        /* About Me Styles */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-text {
-            font-size: 1.125rem;
-            color: #64748b;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Skills Styles */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-        }
-
-        .skill-category h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 1rem;
-        }
-
-        .skill-category i {
-            font-size: 1.25rem;
-            color: #2563eb;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background-color: #eff6ff;
-            color: #1e40af;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        /* Experience Styles */
-        .experience-list {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .experience-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-            margin-bottom: 2rem;
-        }
-
-        .experience-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .experience-header i {
-            font-size: 1.25rem;
-            color: #2563eb;
-        }
-
-        .experience-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1e293b;
-        }
-
-        .experience-company {
-            color: #2563eb;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-period {
-            color: #64748b;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-
-        .experience-description {
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* Projects Styles */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .project-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-        }
-
-        .project-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-header i {
-            font-size: 1.25rem;
-            color: #2563eb;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1e293b;
-        }
-
-        .project-description {
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* Certifications Styles */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .certification-item {
-            background: #f8fafc;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            border: 1px solid #e2e8f0;
-        }
-
-        .certification-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .certification-header i {
-            font-size: 1.25rem;
-            color: #2563eb;
-        }
-
-        .certification-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #1e293b;
-        }
-
-        .certification-status {
-            color: #2563eb;
-            font-weight: 500;
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .certification-description {
-            color: #64748b;
-        }
-
-        /* Testimonials Styles */
-        .testimonials-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonials-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-        }
-
-        .testimonials-card i {
-            font-size: 3rem;
-            color: #bfdbfe;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonials-text {
-            font-size: 1.125rem;
-            color: #64748b;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonials-note {
-            color: #94a3b8;
-        }
-
-        /* Contact Styles */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            font-weight: 500;
-            color: #374151;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #d1d5db;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-button {
-            width: 100%;
-            background-color: #2563eb;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .form-button:hover {
-            background-color: #1d4ed8;
-        }
-
-        /* Footer Styles */
-        .footer {
-            background-color: #1e293b;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-
-        .footer-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        @media (min-width: 640px) {
-            .footer-info {
-                flex-direction: row;
-                gap: 2rem;
-            }
-        }
-
-        .footer-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #cbd5e1;
-        }
-
-        .footer-item i {
-            color: #60a5fa;
-        }
-
-        .footer-item a {
-            color: #cbd5e1;
-            text-decoration: none;
-        }
-
-        .footer-item a:hover {
-            color: white;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Success message styles */
-        .success-message {
-            background-color: #dcfce7;
-            color: #166534;
-            padding: 1rem;
-            border-radius: 0.375rem;
-            margin-bottom: 1rem;
-            display: none;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
         <div class="container">
-            <h1>Sukumar Gajulapalli</h1>
-            <h2>ICT Systems Analyst | Anglo American</h2>
-            <p>Brisbane, Australia • 3+ Years Experience in Enterprise IT Environments</p>
-            <div class="header-buttons">
-                <a href="#" class="btn btn-primary" onclick="downloadResume()">
-                    <i class="fas fa-download"></i>
-                    Download Resume
-                </a>
-                <a href="https://au.linkedin.com/in/sukumarreddygajulapalli" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-linkedin"></i>
-                    Connect on LinkedIn
-                </a>
+            <div class="hero-content">
+                <h1 class="hero-title">Sukumar Gajulapalli</h1>
+                <h2 class="hero-subtitle">ICT Systems Analyst | Anglo American</h2>
+                <p class="hero-description">Brisbane, Australia • 3+ Years Enterprise IT Experience</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="downloadResume()">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </button>
+                    <a href="https://au.linkedin.com/in/sukumarreddygajulapalli" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-linkedin"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- About Me Section -->
-    <section id="about" class="section">
+    <section id="about" class="section about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p class="about-text">
-                    Experienced ICT Systems Analyst with 3+ years in enterprise IT environments, specializing in Microsoft 365, Azure AD (Entra ID), VMware virtualization, and Windows Server administration. Currently leading technical initiatives at Anglo American, focusing on system optimization, security enhancements, and seamless IT service delivery.
-                </p>
-                <p class="about-text">
-                    My expertise spans across cloud infrastructure management, network administration, and comprehensive IT support solutions. I have a proven track record in mentoring technical teams, implementing security protocols, and driving digital transformation projects that enhance operational efficiency and user experience.
-                </p>
-                <p class="about-text">
-                    Passionate about leveraging cutting-edge technologies to solve complex IT challenges, with a strong foundation in problem-solving, system integration, and continuous improvement methodologies.
-                </p>
+                <div class="about-text">
+                    <p>I am a dedicated ICT Systems Analyst with over 3 years of hands-on experience in enterprise IT environments. Currently contributing to Anglo American's technology infrastructure, I specialize in Microsoft 365 ecosystem management, Azure Active Directory (Entra ID) administration, and comprehensive IT system optimization.</p>
+                    
+                    <p>My expertise spans across cloud identity management, Windows Server administration, VMware virtualization, and network infrastructure. I'm particularly passionate about implementing security enhancements, streamlining access management processes, and mentoring technical teams to deliver exceptional IT service solutions.</p>
+                    
+                    <p>Known for my proactive approach and attention to detail, I focus on customer-centric solutions that drive operational efficiency while maintaining the highest security standards. I stay current with emerging technologies and continuously seek opportunities to optimize system performance and user experience.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">600+</div>
+                        <div class="stat-label">Devices Managed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Project Success</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section section-alt">
+    <section id="skills" class="section skills-section">
         <div class="container">
             <h2 class="section-title">Skills & Tools</h2>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>
+                <div class="skill-category" data-category="cloud">
+                    <div class="skill-icon">
                         <i class="fas fa-cloud"></i>
-                        Cloud & Identity
-                    </h3>
-                    <div class="skill-tags">
+                    </div>
+                    <h3>Cloud & Identity Management</h3>
+                    <div class="skill-list">
                         <span class="skill-tag">Microsoft 365</span>
                         <span class="skill-tag">Azure AD (Entra ID)</span>
                         <span class="skill-tag">Microsoft Intune</span>
-                        <span class="skill-tag">Azure Portal</span>
+                        <span class="skill-tag">Multi-Factor Authentication</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>
+                
+                <div class="skill-category" data-category="infrastructure">
+                    <div class="skill-icon">
                         <i class="fas fa-server"></i>
-                        Infrastructure
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">VMware vSphere</span>
+                    </div>
+                    <h3>Infrastructure & Virtualization</h3>
+                    <div class="skill-list">
                         <span class="skill-tag">Windows Server</span>
-                        <span class="skill-tag">DNS/DHCP</span>
-                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">VMware vSphere</span>
+                        <span class="skill-tag">Group Policy</span>
+                        <span class="skill-tag">System Administration</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>
+                
+                <div class="skill-category" data-category="networking">
+                    <div class="skill-icon">
                         <i class="fas fa-network-wired"></i>
-                        Networking
-                    </h3>
-                    <div class="skill-tags">
+                    </div>
+                    <h3>Networking & Security</h3>
+                    <div class="skill-list">
                         <span class="skill-tag">TCP/IP</span>
-                        <span class="skill-tag">Cisco DNAC</span>
-                        <span class="skill-tag">Network Troubleshooting</span>
+                        <span class="skill-tag">DNS/DHCP</span>
                         <span class="skill-tag">VPN Configuration</span>
+                        <span class="skill-tag">Cisco DNAC</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>
+                
+                <div class="skill-category" data-category="service">
+                    <div class="skill-icon">
                         <i class="fas fa-tools"></i>
-                        Service Management
-                    </h3>
-                    <div class="skill-tags">
+                    </div>
+                    <h3>Service Management</h3>
+                    <div class="skill-list">
                         <span class="skill-tag">ServiceNow</span>
                         <span class="skill-tag">ITIL Framework</span>
-                        <span class="skill-tag">PowerShell</span>
-                        <span class="skill-tag">System Monitoring</span>
+                        <span class="skill-tag">Incident Management</span>
+                        <span class="skill-tag">Change Management</span>
                     </div>
                 </div>
             </div>
@@ -574,155 +128,235 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="section experience-section">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-list">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <i class="fas fa-briefcase"></i>
-                        <h3 class="experience-title">ICT Systems Analyst</h3>
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item" data-aos="fade-up">
+                    <div class="experience-date">Aug 2023 – Present</div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>ICT Systems Analyst</h3>
+                            <h4>Anglo American</h4>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Lead enterprise IT system administration and optimization initiatives across global operations</li>
+                                <li>Manage Microsoft 365 ecosystem and Azure AD implementations for 1000+ users</li>
+                                <li>Implement comprehensive security enhancements and access management policies</li>
+                                <li>Successfully decommissioned legacy software from 600+ devices improving security posture</li>
+                            </ul>
+                        </div>
+                        <div class="experience-tech">
+                            <span>Microsoft 365</span>
+                            <span>Azure AD</span>
+                            <span>ServiceNow</span>
+                            <span>VMware</span>
+                        </div>
                     </div>
-                    <p class="experience-company">Anglo American</p>
-                    <p class="experience-period">Aug 2023 – Present</p>
-                    <p class="experience-description">
-                        Leading enterprise IT initiatives including system optimization, security enhancements, and infrastructure management. Responsible for Microsoft 365 administration, Azure AD management, and implementing comprehensive IT solutions across the organization. Successfully managed legacy system decommissioning and MFA implementation projects.
-                    </p>
                 </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <i class="fas fa-briefcase"></i>
-                        <h3 class="experience-title">Systems Engineer (Contract)</h3>
+                
+                <div class="experience-item" data-aos="fade-up">
+                    <div class="experience-date">Feb 2023 – Aug 2023</div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Systems Engineer (Contract)</h3>
+                            <h4>FirstPoint IT</h4>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Provided specialized systems engineering services for enterprise clients</li>
+                                <li>Designed and implemented infrastructure solutions for optimal performance</li>
+                                <li>Conducted system troubleshooting and optimization projects</li>
+                                <li>Collaborated with cross-functional teams on technology integration initiatives</li>
+                            </ul>
+                        </div>
+                        <div class="experience-tech">
+                            <span>Windows Server</span>
+                            <span>VMware</span>
+                            <span>Network Administration</span>
+                            <span>System Integration</span>
+                        </div>
                     </div>
-                    <p class="experience-company">FirstPoint IT</p>
-                    <p class="experience-period">Feb 2023 – Aug 2023</p>
-                    <p class="experience-description">
-                        Provided specialized systems engineering services focusing on infrastructure design, implementation, and optimization. Worked closely with clients to deliver tailored IT solutions, troubleshoot complex technical issues, and ensure seamless system integrations.
-                    </p>
                 </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <i class="fas fa-briefcase"></i>
-                        <h3 class="experience-title">Software Consultant</h3>
+                
+                <div class="experience-item" data-aos="fade-up">
+                    <div class="experience-date">Aug 2022 – Feb 2023</div>
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <h3>Software Consultant</h3>
+                            <h4>Centium Software</h4>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>Delivered technical consulting services for software implementation projects</li>
+                                <li>Analyzed business requirements and designed tailored technical solutions</li>
+                                <li>Provided ongoing support for software deployment and integration</li>
+                                <li>Worked closely with development teams on enterprise software solutions</li>
+                            </ul>
+                        </div>
+                        <div class="experience-tech">
+                            <span>Software Implementation</span>
+                            <span>System Integration</span>
+                            <span>Technical Consulting</span>
+                            <span>Project Management</span>
+                        </div>
                     </div>
-                    <p class="experience-company">Centium Software</p>
-                    <p class="experience-period">Aug 2022 – Feb 2023</p>
-                    <p class="experience-description">
-                        Delivered consulting services for software implementation and system integration projects. Collaborated with cross-functional teams to analyze business requirements, design technical solutions, and provide ongoing support for software deployments.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
+    <section id="projects" class="section projects-section">
         <div class="container">
             <h2 class="section-title">Key Projects</h2>
             <div class="projects-grid">
-                <div class="project-item">
-                    <div class="project-header">
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-icon">
                         <i class="fas fa-shield-alt"></i>
-                        <h3 class="project-title">Legacy Software Decommissioning</h3>
                     </div>
-                    <p class="project-description">
-                        Successfully led the decommissioning of legacy software from 600+ devices across the enterprise, enhancing security posture and reducing operational overhead. Implemented comprehensive migration strategies and ensured zero downtime during the transition process.
-                    </p>
+                    <div class="project-content">
+                        <h3>Legacy Software Decommissioning</h3>
+                        <p>Successfully led the security-focused decommissioning of legacy software from 600+ enterprise devices, significantly improving the organization's security posture and reducing potential attack vectors.</p>
+                        <div class="project-tech">
+                            <span>Security Assessment</span>
+                            <span>System Migration</span>
+                            <span>Risk Management</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <div class="project-header">
-                        <i class="fas fa-lock"></i>
-                        <h3 class="project-title">MFA & Access Management Implementation</h3>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-icon">
+                        <i class="fas fa-user-shield"></i>
                     </div>
-                    <p class="project-description">
-                        Designed and implemented Multi-Factor Authentication (MFA) solutions using Azure AD (Entra ID), significantly improving organizational security. Developed comprehensive access management policies and conducted user training sessions to ensure smooth adoption.
-                    </p>
+                    <div class="project-content">
+                        <h3>MFA & Access Management Implementation</h3>
+                        <p>Designed and implemented comprehensive Multi-Factor Authentication and access management solutions using Microsoft Entra ID, enhancing organizational security while improving user experience.</p>
+                        <div class="project-tech">
+                            <span>Azure AD (Entra ID)</span>
+                            <span>MFA Implementation</span>
+                            <span>Access Policies</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>VMware System Optimization</h3>
+                        <p>Optimized VMware infrastructure performance resulting in improved system uptime and enhanced documentation processes for change management across multiple departments.</p>
+                        <div class="project-tech">
+                            <span>VMware vSphere</span>
+                            <span>Performance Tuning</span>
+                            <span>Documentation</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="section">
+    <section id="certifications" class="section certifications-section">
         <div class="container">
             <h2 class="section-title">Certifications</h2>
             <div class="certifications-grid">
-                <div class="certification-item">
-                    <div class="certification-header">
-                        <i class="fas fa-award"></i>
-                        <h3 class="certification-title">ITIL® Foundation</h3>
+                <div class="certification-card" data-aos="flip-left">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
                     </div>
-                    <p class="certification-status">Status: In Progress</p>
-                    <p class="certification-description">
-                        IT Service Management best practices and framework
-                    </p>
-                </div>
-                <div class="certification-item">
-                    <div class="certification-header">
-                        <i class="fas fa-award"></i>
-                        <h3 class="certification-title">Microsoft Azure Fundamentals</h3>
+                    <div class="certification-content">
+                        <h3>ITIL® Foundation</h3>
+                        <p>IT Service Management Framework</p>
+                        <div class="certification-status in-progress">In Progress</div>
                     </div>
-                    <p class="certification-status">Status: Planned</p>
-                    <p class="certification-description">
-                        Core Azure services, solutions, and management tools
-                    </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Testimonials</h2>
-            <div class="testimonials-content">
-                <div class="testimonials-card">
-                    <i class="fas fa-quote-left"></i>
-                    <p class="testimonials-text">
-                        "Professional references and testimonials will be displayed here upon request."
-                    </p>
-                    <p class="testimonials-note">
-                        Available upon request for potential employers and collaborators.
-                    </p>
+                
+                <div class="certification-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="certification-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Microsoft Azure Fundamentals</h3>
+                        <p>AZ-900 - Core Azure Services</p>
+                        <div class="certification-status planned">Planned</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="section contact-section">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-                <div id="success-message" class="success-message">
-                    Thank you for your message! I'll get back to you soon.
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in discussing new opportunities, collaborations, or connecting with fellow IT professionals.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sukumar.gajulapalli@gmail.com">sukumar.gajulapalli@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+61449985699">+61 449 985 699</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://au.linkedin.com/in/sukumarreddygajulapalli" target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" id="name" class="form-input" required>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div id="success-message" class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            Thank you for your message! I'll get back to you soon.
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" id="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject" class="form-label">Subject</label>
-                    <input type="text" id="subject" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea id="message" class="form-input form-textarea" required></textarea>
-                </div>
-                <button type="submit" class="form-button">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
+                    <h3>Sukumar Gajulapalli</h3>
+                    <p>ICT Systems Analyst | Brisbane, Australia</p>
+                </div>
+                <div class="footer-contact">
                     <div class="footer-item">
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:sukumar.gajulapalli@gmail.com">sukumar.gajulapalli@gmail.com</a>
@@ -732,51 +366,13 @@
                         <a href="tel:+61449985699">+61 449 985 699</a>
                     </div>
                 </div>
-                <div class="footer-item">
-                    <span>&copy; 2024 Sukumar Gajulapalli. All rights reserved.</span>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sukumar Gajulapalli. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Handle form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Show success message
-            const successMessage = document.getElementById('success-message');
-            successMessage.style.display = 'block';
-            
-            // Reset form
-            document.querySelector('.contact-form').reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-            
-            // In a real application, you would send this data to a server
-            console.log('Form submitted:', { name, email, subject, message });
-        }
-        
-        // Handle resume download
-        function downloadResume() {
-            // This would typically link to an actual resume file
-            alert('Resume download functionality would be implemented here. Please provide the resume file URL.');
-        }
-        
-        // Smooth scrolling for navigation (if you add navigation links)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add any additional JavaScript functionality here if needed
-            console.log('Portfolio website loaded successfully');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
